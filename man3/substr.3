@@ -1,0 +1,50 @@
+FT_SUBSTR(3)                    Library Functions Manual                    FT_SUBSTR(3)
+
+NAME
+       ft_substr - allocate and return a substring
+
+SYNOPSIS
+       #include <stdlib.h>
+
+       char *ft_substr(const char *s, unsigned int start, size_t len);
+
+DESCRIPTION
+       The ft_substr() function allocates (with malloc(3)) and returns a substring from
+       the string 's'. The substring begins at index 'start' and is of maximum size 'len'.
+
+PARAMETERS
+       s      The string from which to create the substring.
+
+       start  The start index of the substring in the string 's'.
+
+       len    The maximum length of the substring.
+
+RETURN VALUE
+       The ft_substr() function returns the substring if the allocation is successful.
+       If the allocation fails, it returns NULL.
+
+EXTERNAL FUNCTIONS
+       malloc(3) - allocate dynamic memory
+
+NOTES
+       The caller is responsible for freeing the allocated memory using free(3) when
+       it is no longer needed.
+
+EXAMPLES
+       char *substring = ft_substr("Hello, World!", 7, 5);
+       // substring is now "World!"
+
+SEE ALSO
+       malloc(3), free(3)
+
+AUTHOR
+       Created by [oforest]
+
+COPYRIGHT
+       This function is part of the custom library created by [42].
+
+BUGS
+       Report bugs to [oforest.student@42quebec.com].
+
+VERSION
+       This manual page documents ft_substr version 1.0.
