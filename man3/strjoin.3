@@ -1,0 +1,44 @@
+.TH STRJOIN 3 "November 2023" "42 Quebec"
+.SH NAME
+     strjoin \- concatenate two strings
+
+LIBRARY
+     Your Library (libYourLibrary, -lYourLibrary)
+
+SYNOPSIS
+     #include <libft.h>
+     .br
+     char *strjoin(char const *s1, char const *s2);
+
+DESCRIPTION
+     The \fBstrjoin\fR function allocates and returns a new string, which is the result of concatenating the strings \fIs1\fR and \fIs2\fR.
+
+.PP
+     If either \fIs1\fR or \fIs2\fR is \fBNULL\fR, the function returns \fBNULL\fR, indicating a failure to concatenate.
+
+.PP
+     The resulting string is created by dynamically allocating memory using \fBft_calloc\fR, and the concatenation is performed by copying the characters from \fIs1\fR and \fIs2\fR into the new memory block.
+
+.PP
+     The allocated memory is automatically null-terminated.
+
+RETURN VALUES
+     The \fBstrjoin\fR function returns a pointer to the newly allocated string, or \fBNULL\fR if the allocation fails.
+
+EXAMPLES
+     The following example demonstrates the usage of \fBstrjoin\fR:
+     .br
+     #include <libft.h>
+     .br
+     char *result = strjoin("Hello, ", "world!");
+     printf("%s\n", result);
+     free(result);
+
+SEE ALSO
+     ft_calloc(3), ft_strlen(3)
+
+AUTHOR
+     Created by oforest <oforest@student.42quebec.com>
+
+HISTORY
+     The \fBstrjoin\fR function is part of the 42 Library and was created in November 2023.
