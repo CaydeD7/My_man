@@ -1,0 +1,42 @@
+NAME
+       putendl_fd - Output a string to a file descriptor followed by a newline
+
+SYNOPSIS
+       #include <unistd.h>
+
+       void putendl_fd(char *s, int fd);
+
+DESCRIPTION
+       The putendl_fd() function outputs the string 's' to the specified file descriptor 'fd', followed by a newline character.
+
+PARAMETERS
+       s: The string to output.
+       fd: The file descriptor on which to write.
+
+RETURN VALUE
+       None
+
+EXTERNAL FUNCTIONS
+       write(2) - write to a file descriptor
+
+NOTES
+       This function is a simple wrapper around the write(2) system call.
+
+EXAMPLES
+       putendl_fd("Hello, World!", 1);
+       // Outputs the string "Hello, World!" followed by a newline to the standard output.
+
+SEE ALSO
+       write(2)
+
+AUTHOR
+       Created by [oforest]
+
+COPYRIGHT
+       This function is part of the custom library created by [42].
+
+BUGS
+       Report bugs to [oforest.student@42quebec.com].
+
+VERSION
+       This manual page documents putendl_fd version 1.0.

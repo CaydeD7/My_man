@@ -1,0 +1,42 @@
+NAME
+       putnbr_fd - Output an integer to a file descriptor
+
+SYNOPSIS
+       #include <unistd.h>
+
+       void putnbr_fd(int n, int fd);
+
+DESCRIPTION
+       The putnbr_fd() function outputs the integer 'n' to the specified file descriptor 'fd'.
+
+PARAMETERS
+       n: The integer to output.
+       fd: The file descriptor on which to write.
+
+RETURN VALUE
+       None
+
+EXTERNAL FUNCTIONS
+       write(2) - write to a file descriptor
+
+NOTES
+       This function is a simple wrapper around the write(2) system call.
+
+EXAMPLES
+       putnbr_fd(42, 1);
+       // Outputs the integer 42 to the standard output.
+
+SEE ALSO
+       write(2)
+
+AUTHOR
+       Created by [oforest]
+
+COPYRIGHT
+       This function is part of the custom library created by [42].
+
+BUGS
+       Report bugs to [oforest.student@42quebec.com].
+
+VERSION
+       This manual page documents putnbr_fd version 1.0.

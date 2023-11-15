@@ -1,0 +1,43 @@
+NAME
+       putchar_fd - Output a character to a file descriptor
+
+SYNOPSIS
+       #include <unistd.h>
+
+       void putchar_fd(char c, int fd);
+
+DESCRIPTION
+       The putchar_fd() function outputs the character 'c' to the specified file descriptor 'fd'.
+
+PARAMETERS
+       c: The character to output.
+       fd: The file descriptor on which to write.
+
+RETURN VALUE
+       None
+
+EXTERNAL FUNCTIONS
+       write(2) - write to a file descriptor
+
+NOTES
+       This function is a simple wrapper around the write(2) system call.
+
+EXAMPLES
+       putchar_fd('A', 1);
+       // Outputs the character 'A' to the standard output.
+
+SEE ALSO
+       write(2)
+
+AUTHOR
+       Created by [oforest]
+
+COPYRIGHT
+       This function is part of the custom library created by [42].
+
+BUGS
+       Report bugs to [oforest.student@42quebec.com].
+
+VERSION
+       This manual page documents putchar_fd version 1.0.
+

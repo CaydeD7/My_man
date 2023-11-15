@@ -1,0 +1,46 @@
+NAME
+       striteri - Apply a function to each character of a string, passing its index as the first argument
+
+SYNOPSIS
+       void striteri(char *s, void (*f)(unsigned int, char*));
+
+DESCRIPTION
+       The striteri() function applies the function 'f' to each character of the string 's', passing its index as the first argument. Each character is passed by address to 'f' to be modified if necessary.
+
+PARAMETERS
+       s: The string on which to iterate.
+       f: The function to apply to each character.
+
+RETURN VALUE
+       None
+
+EXTERNAL FUNCTIONS
+       None
+
+NOTES
+       This function modifies the characters in-place. It does not allocate new memory for the string.
+
+EXAMPLES
+       void my_function(unsigned int index, char *c) {
+           // Example function that appends the character index to each character.
+           *c = *c + index;
+       }
+
+       char str[] = "Hello";
+       striteri(str, my_function);
+       // After the function call, str would be "H1e2l3l4o5".
+
+SEE ALSO
+       None
+
+AUTHOR
+       Created by [oforest]
+
+COPYRIGHT
+       This function is part of the custom library created by [42].
+
+BUGS
+       Report bugs to [oforest.student@42quebec.com].
+
+VERSION
+       This manual page documents striteri version 1.0.

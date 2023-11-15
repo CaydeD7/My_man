@@ -1,0 +1,42 @@
+NAME
+       putstr_fd - Output a string to a file descriptor
+
+SYNOPSIS
+       #include <unistd.h>
+
+       void putstr_fd(char *s, int fd);
+
+DESCRIPTION
+       The putstr_fd() function outputs the string 's' to the specified file descriptor 'fd'.
+
+PARAMETERS
+       s: The string to output.
+       fd: The file descriptor on which to write.
+
+RETURN VALUE
+       None
+
+EXTERNAL FUNCTIONS
+       write(2) - write to a file descriptor
+
+NOTES
+       This function is a simple wrapper around the write(2) system call.
+
+EXAMPLES
+       putstr_fd("Hello, World!", 1);
+       // Outputs the string "Hello, World!" to the standard output.
+
+SEE ALSO
+       write(2)
+
+AUTHOR
+       Created by [oforest]
+
+COPYRIGHT
+       This function is part of the custom library created by [42].
+
+BUGS
+       Report bugs to [oforest.student@42quebec.com].
+
+VERSION
+       This manual page documents putstr_fd version 1.0.

@@ -1,44 +1,44 @@
-.TH STRTRIM 3 "November 2023" "42 Quebec"
-.SH NAME
-     strtrim \- trim characters from the beginning and end of a string
-
-LIBRARY
-     Your Library (libYourLibrary, -lYourLibrary)
+NAME
+       strtrim - Trim specified characters from the beginning and end of a string
 
 SYNOPSIS
-     #include <libft.h>
-     .br
-     char *strtrim(char const *s1, char const *set);
+       #include <stdlib.h>
+
+       char *strtrim(char const *s1, char const *set);
 
 DESCRIPTION
-     The \fBstrtrim\fR function allocates and returns a new string that is a copy of \fIs1\fR with leading and trailing characters specified in \fIset\fR removed.
+       The strtrim() function allocates and returns a new string that is a copy of 's1' with leading and trailing characters specified in 'set' removed. The memory for the new string is allocated using malloc(3).
 
-.PP
-     If either \fIs1\fR or \fIset\fR is \fBNULL\fR, the function returns \fBNULL\fR, indicating a failure to trim.
+PARAMETERS
+       s1: The string to be trimmed.
+       set: The reference set of characters to trim.
 
-.PP
-     The resulting string is created by dynamically allocating memory using \fBmalloc\fR, and the trimming is performed by removing characters from \fIs1\fR that match any character in \fIset\fR from the beginning and end of the string.
+RETURN VALUE
+       The trimmed string.
+       NULL if the allocation fails.
 
-.PP
-     The allocated memory is automatically null-terminated.
+EXTERNAL FUNCTIONS
+       malloc(3) - allocate dynamic memory
 
-RETURN VALUES
-     The \fBstrtrim\fR function returns a pointer to the newly allocated trimmed string, or \fBNULL\fR if the allocation fails.
+NOTES
+       The caller is responsible for freeing the allocated memory using free(3) when it is no longer needed.
 
 EXAMPLES
-     The following example demonstrates the usage of \fBstrtrim\fR:
-     .br
-     #include <libft.h>
-     .br
-     char *result = strtrim("   Hello, world!   ", " ");
-     printf("%s\n", result);
-     free(result);
+       char *trimmed_str = strtrim("   Hello, World!   ", " ");
+       // trimmed_str is now "Hello, World!"
 
 SEE ALSO
-     ft_calloc(3), ft_strlen(3)
+       malloc(3), free(3)
 
 AUTHOR
-     Created by oforest <oforest@student.42quebec.com>
+       Created by [oforest]
 
-HISTORY
-     The \fBstrtrim\fR function is part of the 42 Library and was created in November 2023.
+COPYRIGHT
+       This function is part of the custom library created by [42].
+
+BUGS
+       Report bugs to [oforest.student@42quebec.com].
+
+VERSION
+       This manual page documents strtrim version 1.0.
+

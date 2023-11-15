@@ -1,0 +1,45 @@
+NAME
+       strmapi - Apply a function to each character of a string and create a new string
+
+SYNOPSIS
+       #include <stdlib.h>
+
+       char *strmapi(char const *s, char (*f)(unsigned int, char));
+
+DESCRIPTION
+       The strmapi() function applies the function 'f' to each character of the string 's', passing its index as the first argument. It creates and returns a new string resulting from successive applications of 'f'. The memory for the new string is allocated using malloc(3).
+
+PARAMETERS
+       s: The string on which to iterate.
+       f: The function to apply to each character.
+
+RETURN VALUE
+       The string created from the successive applications of 'f'.
+       NULL if the allocation fails.
+
+EXTERNAL FUNCTIONS
+       malloc(3) - allocate dynamic memory
+
+NOTES
+       The caller is responsible for freeing the allocated memory using free(3) when it is no longer needed.
+
+EXAMPLES
+       char *result_str = strmapi("Hello", my_function);
+       // Assuming my_function is a custom function that appends the character index to each character.
+       // If my_function(index, 'H') returns 'H0', my_function(index, 'e') returns 'e1', and so on,
+       // then result_str would be "H0e1l2l3o4".
+
+SEE ALSO
+       malloc(3), free(3)
+
+AUTHOR
+       Created by [oforest]
+
+COPYRIGHT
+       This function is part of the custom library created by [42].
+
+BUGS
+       Report bugs to [oforest.student@42quebec.com].
+
+VERSION
+       This manual page documents strmapi version 1.0.
